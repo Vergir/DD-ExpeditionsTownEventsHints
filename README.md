@@ -63,7 +63,7 @@ Requires the game installed, since the build borrows three things from it: the
 resolve `{colour_start|...}` tags), and the pristine `quest_select.layout.darkest` that the UI lift is applied to. `tools/build.py` resolves the game at `../../game/DarkestDungeon`
 relative to the repo — adjust `GAME` if your checkout sits elsewhere.
 
-## Licence
+## License
 
 My code is MIT, Red Hook assets are not. See [LICENSE](LICENSE).
 

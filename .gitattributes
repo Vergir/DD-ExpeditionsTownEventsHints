@@ -1,0 +1,14 @@
+# Sources are ordinary text.
+*.md   text
+*.py   text
+*.ps1  text
+*.xml  text
+
+*.loc2    binary
+*.png     binary
+*.darkest -text
+
+# Last rule wins in .gitattributes, so this stays at the bottom on purpose.
+# Everything under dist/ is a shipped artifact and must reach a clone byte-identical to
+# what was built and tested - no line-ending translation, whatever its extension.
+dist/** -text

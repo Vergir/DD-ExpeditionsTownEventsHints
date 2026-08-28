@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Expeditions Town Events Hints - the 8 town events that can be granted as a quest reward.
+
+  Each entry replaces the event's title string. The game renders that string in the
+  "Rewards" block of the quest select screen, so appending lines to it is the only way
+  to get the effects shown there (UI layouts cannot gain new text elements).
+
+  Fit budget, measured in game at .town_notification_text_width 400:
+    ~36 characters per line, and the event name plus 2 lines before it clips.
+
+  Numbers come from shared/buffs/base.buffs.json:
+    resolve_xp_bonus_percent 0.33, combat_stat_multiply damage_low/high 0.15.
+-->
+<root>
+  <language id="english">
+
+    <!-- Activate quests: region-scoped party buff until the end of the next quest. -->
+    <entry id="town_event_title_embark_party_buff_crypts_buff"><![CDATA[Silence in the Crypts
+{colour_start|neutral}Ruins: +33% Resolve XP, +15% DMG{colour_end}]]></entry>
+    <entry id="town_event_title_embark_party_buff_weald_buff"><![CDATA[Sunshine in the Thicket
+{colour_start|neutral}Weald: +33% Resolve XP, +15% DMG{colour_end}]]></entry>
+    <entry id="town_event_title_embark_party_buff_cove_buff"><![CDATA[Gentle Tide
+{colour_start|neutral}Cove: +33% Resolve XP, +15% DMG{colour_end}]]></entry>
+    <entry id="town_event_title_embark_party_buff_warrens_buff"><![CDATA[Fresh Air in the Tunnels
+{colour_start|neutral}Warrens: +33% Resolve XP, +15% DMG{colour_end}]]></entry>
+
+    <!-- Gather quests: a town activity or purchase is free for one week. -->
+    <entry id="town_event_title_free_abbey"><![CDATA[All Saints Day
+{colour_start|neutral}All Abbey activities free{colour_end}]]></entry>
+    <entry id="town_event_title_free_sanitarium"><![CDATA[Caregivers Convention
+{colour_start|neutral}Sanitarium: all treatments free{colour_end}]]></entry>
+    <entry id="town_event_title_provision_supply_free"><![CDATA[Bumper Crop
+{colour_start|neutral}Provisions & supplies free{colour_end}]]></entry>
+    <entry id="town_event_title_upgrade_tag_free_weapon"><![CDATA[Lost and Found
+{colour_start|neutral}Free weapon upgrade x1{colour_end}]]></entry>
+
+  </language>
+</root>

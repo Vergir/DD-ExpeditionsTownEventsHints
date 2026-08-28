@@ -48,15 +48,20 @@ translated strings, so it reads exactly the way the game words the same effects 
 ## Building
 
 ```
-pwsh -File tools/build.ps1
+python tools/build.py
 ```
+
+`--preview` prints the assembled non-English lines without building anything, and
+`--for-upload` stamps in the `ModDataPath` that `steam_workshop_upload.exe` wants. Run a
+plain build afterwards to scrub it back out, since it is an absolute path to your own
+checkout and should not be committed.
 
 Everything under `dist/` is generated. Edit `src/`, never `dist/`.
 
 Requires the game installed, since the build borrows three things from it: the
 `localization.exe` compiler, `colours/base.colours.darkest` (which the compiler needs to
-resolve `{colour_start|...}` tags), and the pristine `quest_select.layout.darkest` that the UI lift is applied to. `tools/build.ps1` resolves the game at `../../game/DarkestDungeon`
-relative to the repo — adjust `$game` if your checkout sits elsewhere.
+resolve `{colour_start|...}` tags), and the pristine `quest_select.layout.darkest` that the UI lift is applied to. `tools/build.py` resolves the game at `../../game/DarkestDungeon`
+relative to the repo — adjust `GAME` if your checkout sits elsewhere.
 
 ## Licence
 

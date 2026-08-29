@@ -3,12 +3,16 @@
 Builds both Expeditions Town Events Hints mods into dist/ from src/.
 
     python tools/build.py                # normal, publishable build
-    python tools/build.py --for-upload   # same, plus ModDataPath for the Workshop uploader
+    python tools/build.py --for-upload   # same, plus what steam_workshop_upload.exe needs
     python tools/build.py --preview      # show the assembled non-English lines, build nothing
 
-dist/ ends up containing exactly what a subscriber needs and nothing else. The game reads
-only the compiled .loc2 and the .darkest layout - Darkest.exe holds zero references to
-*.string_table.xml - so the source XML and this script stay out of the shipped folder.
+A normal build leaves dist/ containing exactly what a manual install needs and nothing
+else. The game reads only the compiled .loc2 and the .darkest layout - Darkest.exe holds
+zero references to *.string_table.xml - so the source XML and this script stay out of it.
+
+The Workshop uploader is the exception: it owns localization/, deleting the .loc2 it finds
+there and recompiling from *.string_table.xml. --for-upload therefore adds the XML back,
+because uploading without it publishes a mod containing no strings at all.
 
 Requires the game: localization.exe, colours/base.colours.darkest and the pristine
 quest_select.layout.darkest all come from it. Adjust GAME below if your checkout moves.
@@ -311,6 +315,18 @@ def build(v, for_upload):
         for f in compile_loc2(xml, os.path.join(work, "loc")):
             shutil.copy(f, os.path.join(dist, "localization", f"{name}_{os.path.basename(f)}"))
 
+        # The uploader OWNS localization/. It deletes the .loc2 files it finds there and
+        # regenerates them from *.string_table.xml, naming the output
+        # <PublishedFileId>_<language>.loc2. Upload without the XML and it deletes our
+        # tables, compiles nothing, and publishes a mod with no strings at all - which is
+        # exactly what happened on the first upload of both mods.
+        #
+        # So the XML ships for an upload run and only for an upload run. A normal build
+        # leaves it out: the game itself never reads it, and the committed dist/ is meant
+        # for manual installs, which need our own compiled .loc2 instead.
+        if for_upload:
+            shutil.copy(xml, os.path.join(dist, "localization"))
+
     write_project_xml(src_project, os.path.join(dist, "project.xml"), dist, for_upload)
     shutil.copy(os.path.join(REPO, "src", v["icon"]), os.path.join(dist, "preview_icon.png"))
     if v["intl"]:
@@ -324,7 +340,8 @@ def build(v, for_upload):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--for-upload", action="store_true",
-                    help="stamp ModDataPath in for steam_workshop_upload.exe; re-run without it afterwards to scrub")
+                    help="prepare dist/ for steam_workshop_upload.exe: adds ModDataPath and the "
+                         "string_table.xml the uploader compiles from. Re-run plain afterwards to scrub.")
     ap.add_argument("--preview", action="store_true",
                     help="print the assembled non-English lines and exit")
     a = ap.parse_args()

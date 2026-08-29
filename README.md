@@ -15,18 +15,7 @@ It covers the eight events that can appear as a quest reward: **Silence in the C
 **Sunshine in the Thicket**, **Gentle Tide**, **Fresh Air in the Tunnels** (Activate), and
 **All Saints Day**, **Caregivers Convention**, **Lost and Found**, **Bumper Crop** (Gather).
 
-## Installing
-
-Copy one folder out of `dist/` into the game's `mods/` directory:
-
-```
-.../steamapps/common/Darkest Dungeon/mods/(one of the dist folders here)
-```
-
-Then enable it on the save slot in the in-game mod menu. Safe to add or remove
-mid-campaign; it changes no gameplay, balance, or save data.
-
-### Two builds
+## Two builds
 
 | | `expeditions_town_events_hints` | `expeditions_town_events_hints_intl` |
 |---|---|---|
@@ -45,16 +34,36 @@ bottom of the last line is still clipped by the panel edge. Readable, not pretty
 Non-English text is **not translated by hand**. It's assembled from the game's own
 translated strings, so it reads exactly the way the game words the same effects elsewhere, minus minor grammatical mistakes
 
+## Installing
+
+### Steam Workshop
+
+Recommended way is to just use Steam Workshop. Pick one of the editions and press "Subscribe".
+
+English
+https://steamcommunity.com/sharedfiles/filedetails/?id=3791805341
+
+International
+https://steamcommunity.com/sharedfiles/filedetails/?id=3791806160
+
+### Manual
+
+Copy one folder out of `dist/` into the game's `mods/` directory:
+
+```
+.../steamapps/common/Darkest Dungeon/mods/(one of the dist folders here)
+```
+
+Then enable it on the save slot in the in-game mod menu. Safe to add or remove
+mid-campaign; it changes no gameplay, balance, or save data.
+
 ## Building
 
 ```
 python tools/build.py
 ```
 
-`--preview` prints the assembled non-English lines without building anything, and
-`--for-upload` stamps in the `ModDataPath` that `steam_workshop_upload.exe` wants. Run a
-plain build afterwards to scrub it back out, since it is an absolute path to your own
-checkout and should not be committed.
+`--preview` prints the assembled non-English lines without building anything.
 
 Everything under `dist/` is generated. Edit `src/`, never `dist/`.
 
@@ -62,6 +71,35 @@ Requires the game installed, since the build borrows three things from it: the
 `localization.exe` compiler, `colours/base.colours.darkest` (which the compiler needs to
 resolve `{colour_start|...}` tags), and the pristine `quest_select.layout.darkest` that the UI lift is applied to. `tools/build.py` resolves the game at `../../game/DarkestDungeon`
 relative to the repo — adjust `GAME` if your checkout sits elsewhere.
+
+### Publishing to the Workshop
+
+```
+python tools/build.py --for-upload
+```
+
+Then drag `dist/<mod>/project.xml` onto
+`Darkest Dungeon/_windows/win32/steam_workshop_upload.exe` with Steam running. Use the copy
+in `win32/`, not the one in `_windows/` — only the former has its DLLs beside it, and the
+official guide points at the wrong one.
+
+`--for-upload` adds two things a normal build leaves out: `ModDataPath`, an absolute path to
+your own checkout, and the `string_table.xml`. The XML matters more than it looks. The
+uploader owns `localization/`: it deletes the `.loc2` files it finds there and recompiles
+them from any `*.string_table.xml`, naming the output `<PublishedFileId>_<language>.loc2`.
+Upload without the XML and it deletes the tables, compiles nothing, and cheerfully publishes
+a mod containing no strings whatsoever.
+
+Afterwards, run a plain `python tools/build.py`. That scrubs both extras back out and moves
+the `PublishedFileId` the uploader wrote into `dist/` over into `src/`, printing
+`! rescued PublishedFileId <id> ... commit this`. Commit it — that id *is* the Workshop
+item, and `dist/` is regenerated on every build, so an id left only there is lost and the
+next upload publishes a new item instead of updating the existing one.
+
+The uploader also leaves `modfiles.txt` and `steam_workshop_uploader.log` behind; both are
+gitignored and a plain rebuild clears them. `modfiles.txt` in particular must not reach a
+manual install — it is a size manifest, and the game refuses to load any file whose size
+does not match it.
 
 ## License
 

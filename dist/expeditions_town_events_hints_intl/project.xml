@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project>
 	<PreviewIconFile>preview_icon.png</PreviewIconFile>
-	<ItemDescriptionShort>Shows what a quest's Town Event reward actually does, on the quest select screen. All 12 languages.</ItemDescriptionShort>
+	<ItemDescriptionShort>Show hints for Quests that result in Town Event.</ItemDescriptionShort>
 	<Title>Expeditions Town Events Hints (International)</Title>
 	<Language>english</Language>
 	<UpdateDetails/>
@@ -15,9 +15,9 @@
 		<Tags>QoL</Tags>
 		<Tags>Localization</Tags>
 	</Tags>
-	<ItemDescription>Show hints when a quest results in some Town Event that explains what the event does.
+	<ItemDescription>Show hints for Quests that result in Town Event.
 
-This is the experimental [b]all-languages[/b] version. If you play in English, use the plain "Expeditions Town Events Hints" instead - it is tidier and does not touch the layout.
+This is the experimental [b]all-languages[/b] version of the mod. If you play in English, use the plain "Expeditions Town Events Hints" instead - it is tidier and does not touch the layout.
 https://steamcommunity.com/sharedfiles/filedetails/?id=3791805341
 
 [b]Supported[/b]

@@ -28,6 +28,9 @@ The quest panel gives this line a fixed, fairly narrow space. English was writte
 
 This version nudges the town event line up by 15 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty.
 
+[b]AI Usage[/b]
+AI was heavily used to write code, rephrase words for a better fit and to write docs. AI was not used for icon art.
+
 [b]Disclaimer[/b]
 "Expeditions Town Events Hints" is not an official Red Hook Studios product or product modification, and Red Hook Studios Inc. is not responsible in any way for changes or damages that may result from using the mod. "Darkest Dungeon" and the Darkest Dungeon logo are trademarks of Red Hook Studios Inc.</ItemDescription>
 	<PublishedFileId>3791806160</PublishedFileId>

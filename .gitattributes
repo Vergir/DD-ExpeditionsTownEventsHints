@@ -6,6 +6,7 @@
 
 *.loc2    binary
 *.png     binary
+*.jpg     binary
 *.darkest -text
 
 # Last rule wins in .gitattributes, so this stays at the bottom on purpose.

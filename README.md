@@ -1,15 +1,10 @@
 # Expeditions Town Events Hints
 
 A Darkest Dungeon UI mod. Gather and Activate quests reward you with a Town Event, but the
-quest screen only ever tells you its **name**. "Silence in the Crypts" doesn't tell
-anything. This prints what the event actually does, underneath
-the name.
+quest screen only ever gives you its **name** — and "Silence in the Crypts" tells you
+nothing about what you are actually getting. This mod spells out the effects underneath it.
 
-```
-Town Event:                      Town Event:
-Silence in the Crypts     ->     Silence in the Crypts
-                                 Ruins: +33% Resolve XP, +15% DMG
-```
+![The quest reward panel without and with the mod. The Town Event line gains a second line spelling out the effect: "All Abbey activities free".](screenshot.jpg)
 
 It covers the eight events that can appear as a quest reward: **Silence in the Crypts**,
 **Sunshine in the Thicket**, **Gentle Tide**, **Fresh Air in the Tunnels** (Activate), and

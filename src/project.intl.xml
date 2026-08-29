@@ -15,33 +15,18 @@
 		<Tags>QoL</Tags>
 		<Tags>Localization</Tags>
 	</Tags>
-	<ItemDescription>Gather and Activate quests reward you with a Town Event, but the quest screen only ever tells you its name. "Silence in the Crypts" does not tell you anything, so you end up on the wiki.
+	<ItemDescription>Show hints when a quest results in some Town Event that explains what the event does.
 
-This mod prints what the event actually does, right underneath the name.
-
-This is the [b]all-languages[/b] version. If you play in English, use the plain "Expeditions Town Events Hints" instead - it is tidier and does not touch the layout. Do not run both.
+This is the experimental [b]all-languages[/b] version. If you play in English, use the plain "Expeditions Town Events Hints" instead - it is tidier and does not touch the layout.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3791805341
 
 [b]Supported[/b]
 Brazilian, Czech, English, French, German, Italian, Japanese, Korean, Polish, Russian, Simplified Chinese, Spanish.
 
-The non-English lines are not translated by hand. They are assembled from the game's own translated strings, so they are worded exactly the way the game words the same effects elsewhere.
-
-[b]Please read: text can be clipped[/b]
+[b]Text can be clipped[/b]
 The quest panel gives this line a fixed, fairly narrow space. English was written short to fit it. Most other languages need more room than English does, and the game's own phrasing is longer still.
 
-This version nudges the town event line up by 15 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty. If that bothers you more than reading the wiki does, this mod may not be for you.
-
-[b]What it changes[/b]
-No gameplay, no balance, no stats. Every number is read straight out of the game's own buff definitions.
-
-Two things are touched:
-- The eight event title strings, via localization.
-- campaign/town/quest_select/quest_select.layout.darkest - three position values, moving the town event line up 15px. Nothing else in that file is altered.
-
-Because the title strings are shared, the effect lines also appear in the town event announcement and in the activity log entry for these eight events.
-
-[b]Compatibility[/b]
-Conflicts with mods that rewrite these same eight strings, or that replace quest_select.layout.darkest. Safe to add or remove mid-campaign.
+This version nudges the town event line up by 15 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty.
 
 [b]Disclaimer[/b]
 "Expeditions Town Events Hints" is not an official Red Hook Studios product or product modification, and Red Hook Studios Inc. is not responsible in any way for changes or damages that may result from using the mod. "Darkest Dungeon" and the Darkest Dungeon logo are trademarks of Red Hook Studios Inc.</ItemDescription>

@@ -14,9 +14,7 @@
 		<Tags>UI</Tags>
 		<Tags>QoL</Tags>
 	</Tags>
-	<ItemDescription>Gather and Activate quests reward you with a Town Event, but the quest screen only ever tells you its name. "Silence in the Crypts" does not tell you anything, so you end up on the wiki.
-
-This mod prints what the event actually does, right underneath the name.
+	<ItemDescription>Show hints when a quest results in some Town Event that explains what the event does
 
 [b]Before[/b]
 Town Event:
@@ -27,24 +25,30 @@ Town Event:
 Silence in the Crypts
 Ruins: +33% Resolve XP, +15% DMG
 
-[b]Covers all 8 quest-reward events[/b]
+[b]Affected Expeditions[/b]
 Activate quests: Silence in the Crypts, Sunshine in the Thicket, Gentle Tide, Fresh Air in the Tunnels.
 Gather quests: All Saints Day, Caregivers Convention, Lost and Found, Bumper Crop.
 
-[b]What it changes[/b]
+[b]Compatibility[/b]
 Text only. It is a localization override of the eight event title strings - no gameplay, no balance, no stats, and no layout files. Every number is read straight out of the game's own buff definitions rather than copied from a guide.
 
 The lines are written short on purpose so they fit the quest panel without anything being clipped or moved.
 
+Conflicts only with mods that rewrite these same eight strings. Safe to add or remove mid-campaign.
+
+[b]Bugs[/b]
 Because the title strings are shared, the effect lines also appear in the town event announcement and in the activity log entry for these eight events.
 
 [b]English only[/b]
-Playing in another language? Use "Expeditions Town Events Hints (International)" instead. Do not run both.
+Playing in another language? Use "Expeditions Town Events Hints (International)" instead.
+https://steamcommunity.com/sharedfiles/filedetails/?id=3791806160
 
-Other languages are unaffected by this version - they simply fall back to the vanilla event names.
+[b]Source Code[/b]
+https://github.com/Vergir/DD-ExpeditionsTownEventsHints
+Also MIT licensed, so hack away.
 
-[b]Compatibility[/b]
-Conflicts only with mods that rewrite these same eight strings. Safe to add or remove mid-campaign.
+[b]AI Usage[/b]
+AI was heavily used to write code, rephrase words for a better fit and to write docs. AI was not used for icon art.
 
 [b]Disclaimer[/b]
 "Expeditions Town Events Hints" is not an official Red Hook Studios product or product modification, and Red Hook Studios Inc. is not responsible in any way for changes or damages that may result from using the mod. "Darkest Dungeon" and the Darkest Dungeon logo are trademarks of Red Hook Studios Inc.</ItemDescription>

@@ -72,35 +72,6 @@ Requires the game installed, since the build borrows three things from it: the
 resolve `{colour_start|...}` tags), and the pristine `quest_select.layout.darkest` that the UI lift is applied to. `tools/build.py` resolves the game at `../../game/DarkestDungeon`
 relative to the repo — adjust `GAME` if your checkout sits elsewhere.
 
-### Publishing to the Workshop
-
-```
-python tools/build.py --for-upload
-```
-
-Then drag `dist/<mod>/project.xml` onto
-`Darkest Dungeon/_windows/win32/steam_workshop_upload.exe` with Steam running. Use the copy
-in `win32/`, not the one in `_windows/` — only the former has its DLLs beside it, and the
-official guide points at the wrong one.
-
-`--for-upload` adds two things a normal build leaves out: `ModDataPath`, an absolute path to
-your own checkout, and the `string_table.xml`. The XML matters more than it looks. The
-uploader owns `localization/`: it deletes the `.loc2` files it finds there and recompiles
-them from any `*.string_table.xml`, naming the output `<PublishedFileId>_<language>.loc2`.
-Upload without the XML and it deletes the tables, compiles nothing, and cheerfully publishes
-a mod containing no strings whatsoever.
-
-Afterwards, run a plain `python tools/build.py`. That scrubs both extras back out and moves
-the `PublishedFileId` the uploader wrote into `dist/` over into `src/`, printing
-`! rescued PublishedFileId <id> ... commit this`. Commit it — that id *is* the Workshop
-item, and `dist/` is regenerated on every build, so an id left only there is lost and the
-next upload publishes a new item instead of updating the existing one.
-
-The uploader also leaves `modfiles.txt` and `steam_workshop_uploader.log` behind; both are
-gitignored and a plain rebuild clears them. `modfiles.txt` in particular must not reach a
-manual install — it is a size manifest, and the game refuses to load any file whose size
-does not match it.
-
 ## License
 
 My code is MIT, Red Hook assets are not. See [LICENSE](LICENSE).

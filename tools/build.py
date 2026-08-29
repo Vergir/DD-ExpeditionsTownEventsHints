@@ -28,7 +28,7 @@ ENGLISH_SRC = os.path.join(REPO, "src", "strings.english.xml")
 
 # How far to lift the town event line, in pixels, for the International build. Longer
 # translations need the room; English does not and gets no layout override at all.
-LIFT_PX = 15
+LIFT_PX = 10
 
 # The mod folder name is also the .loc2 filename prefix. Both must be underscore-only: the
 # game finds a mod's strings with .*localization/[A-Za-z0-9._]+_<language>.loc2, which has

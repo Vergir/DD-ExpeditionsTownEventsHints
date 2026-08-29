@@ -20,14 +20,14 @@ It covers the eight events that can appear as a quest reward: **Silence in the C
 | | `expeditions_town_events_hints` | `expeditions_town_events_hints_intl` |
 |---|---|---|
 | Languages | English | All 12 |
-| Layout change | none | town event line lifted 15px |
+| Layout change | none | town event line lifted 10px |
 | Clipping | none | some, see below |
 
 **Install one, not both.** English players want the plain build: the lines were written
 short specifically to fit, so nothing is clipped and no layout file is touched.
 
 The International build exists because most languages need more room than English does.
-It lifts the town event line by 15px to buy back a line, which is enough for most events in
+It lifts the town event line by 10px to buy back a line, which is enough for most events in
 most languages — but in the longest combinations (French, Spanish, Portuguese, Korean) the
 bottom of the last line is still clipped by the panel edge. Readable, not pretty.
 

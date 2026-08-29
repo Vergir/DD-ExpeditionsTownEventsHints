@@ -26,7 +26,7 @@ Brazilian, Czech, English, French, German, Italian, Japanese, Korean, Polish, Ru
 [b]Text can be clipped[/b]
 The quest panel gives this line a fixed, fairly narrow space. English was written short to fit it. Most other languages need more room than English does, and the game's own phrasing is longer still.
 
-This version nudges the town event line up by 15 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty.
+This version nudges the town event line up by 10 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty.
 
 [b]AI Usage[/b]
 AI was heavily used to write code, rephrase words for a better fit and to write docs. AI was not used for icon art.

@@ -96,9 +96,9 @@ town_quest_select_quest_layout:
 	.trinket_retention_description_text_offset 62 750
 	.trinket_retention_description_text_width 310
 	.inspect_input_preview_offset 80 742
-	.town_notification_icon 60 735
-	.town_notification_title_text 110 735
-	.town_notification_text 110 759
+	.town_notification_icon 60 740
+	.town_notification_title_text 110 740
+	.town_notification_text 110 764
 	.town_notification_text_width 400
 	.continue_quest_text 30 750
 	.continue_quest_text_width 450

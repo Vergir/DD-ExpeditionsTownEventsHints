@@ -15,23 +15,26 @@
 		<Tags>QoL</Tags>
 		<Tags>Localization</Tags>
 	</Tags>
-	<ItemDescription>Show hints for Quests that result in Town Event.
+	<ItemDescription>[h3]What the mod does[/h3]
+
+Show hints for Quests that result in Town Event.
 
 This is the experimental [b]all-languages[/b] version of the mod. If you play in English, use the plain "Expeditions Town Events Hints" instead - it is tidier and does not touch the layout.
 https://steamcommunity.com/sharedfiles/filedetails/?id=3791805341
 
-[b]Supported[/b]
+[h3]Supported[/h3]
 Brazilian, Czech, English, French, German, Italian, Japanese, Korean, Polish, Russian, Simplified Chinese, Spanish.
 
-[b]Text can be clipped[/b]
+[h3]Text can be clipped[/h3]
 The quest panel gives this line a fixed, fairly narrow space. English was written short to fit it. Most other languages need more room than English does, and the game's own phrasing is longer still.
 
 This version nudges the town event line up by 10 pixels to buy back a line, which is enough for most events in most languages. In a few combinations - longest in French, Spanish, Portuguese and Korean - the last line will still have its bottom clipped by the panel edge. The effect is readable, but it is not pretty.
 
-[b]AI Usage[/b]
+[h3]AI Usage[/h3]
 AI was heavily used to write code, rephrase words for a better fit and to write docs. AI was not used for icon art.
 
-[b]Disclaimer[/b]
+---
+
 "Expeditions Town Events Hints" is not an official Red Hook Studios product or product modification, and Red Hook Studios Inc. is not responsible in any way for changes or damages that may result from using the mod. "Darkest Dungeon" and the Darkest Dungeon logo are trademarks of Red Hook Studios Inc.</ItemDescription>
 	<PublishedFileId>3791806160</PublishedFileId>
 </project>

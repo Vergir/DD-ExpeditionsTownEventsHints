@@ -14,7 +14,9 @@
 		<Tags>UI</Tags>
 		<Tags>QoL</Tags>
 	</Tags>
-	<ItemDescription>Show hints for Quests that result in Town Event.
+	<ItemDescription>[h3]What the mod does[/h3]
+
+Show hints for Quests that result in Town Event.
 
 [b]Before[/b]
 Town Event:
@@ -29,7 +31,7 @@ Ruins: +33% Resolve XP, +15% DMG
 Activate quests: Silence in the Crypts, Sunshine in the Thicket, Gentle Tide, Fresh Air in the Tunnels.
 Gather quests: All Saints Day, Caregivers Convention, Lost and Found, Bumper Crop.
 
-[b]Compatibility[/b]
+[h3]Compatibility[/h3]
 It is a localization override of the eight event title strings - no gameplay changes, so should be safe with most other mods.
 
 It is advised to put this closer to the top so it correctly works with bigger overhaul mods and doesn't get rewritten.
@@ -37,21 +39,22 @@ It is advised to put this closer to the top so it correctly works with bigger ov
 
 Safe to add or remove mid-campaign.
 
-[b]Bugs[/b]
+[h3]Bugs[/h3]
 Because the title strings are shared, the effect lines also appear in the town event announcement and in the activity log entry for these eight events.
 
-[b]English only[/b]
+[h3]Playing non-english?[/h3]
 Playing in another language? Use "Expeditions Town Events Hints (International)" instead.
 https://steamcommunity.com/sharedfiles/filedetails/?id=3791806160
 
-[b]Source Code[/b]
+[h3]Source Code[/h3]
 https://github.com/Vergir/DD-ExpeditionsTownEventsHints
 Also MIT licensed, so hack away.
 
-[b]AI Usage[/b]
+[h3]AI Usage[/h3]
 AI was heavily used to write code, rephrase words for a better fit and to write docs. AI was not used for icon art.
 
-[b]Disclaimer[/b]
+---
+
 "Expeditions Town Events Hints" is not an official Red Hook Studios product or product modification, and Red Hook Studios Inc. is not responsible in any way for changes or damages that may result from using the mod. "Darkest Dungeon" and the Darkest Dungeon logo are trademarks of Red Hook Studios Inc.</ItemDescription>
 	<PublishedFileId>3791805341</PublishedFileId>
 </project>
